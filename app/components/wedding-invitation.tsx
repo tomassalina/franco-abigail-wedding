@@ -8,6 +8,7 @@ import MusicPlayer from "./music-player";
 import GiftModal from "./gift-modal";
 import ImageCarousel from "./image-carousel";
 import { motion, AnimatePresence } from "framer-motion";
+import { Header } from "./header";
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,7 +89,7 @@ export default function WeddingInvitation() {
           <motion.main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="min-h-screen bg-[#F9F5EF]"
+            className="min-h-screen"
           >
             {/* Music control button */}
             <div className="fixed top-4 right-4 z-40">
@@ -96,11 +97,7 @@ export default function WeddingInvitation() {
             </div>
 
             {/* Header */}
-            <header className="pt-6 pb-4 text-center bg-[#F2F2ED]">
-              <h1 className="font-serif text-3xl md:text-4xl text-[#9E7C4F]">
-                Franco & Abigail
-              </h1>
-            </header>
+            <Header />
 
             {/* Main content */}
             <section className="container mx-auto px-4 max-w-4xl">
@@ -109,7 +106,7 @@ export default function WeddingInvitation() {
                 <div className="relative">
                   <div className="w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=400&width=800"
+                      src="/images/hero.image.png"
                       alt="Franco y Abigail"
                       width={800}
                       height={400}

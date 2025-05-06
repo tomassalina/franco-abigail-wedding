@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${poppins.className} ${playfair.className} antialiased`}
+        className={`${poppins.className} ${playfair.className} antialiased bg-accent`}
       >
         {children}
       </body>

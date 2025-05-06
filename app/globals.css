@@ -36,7 +36,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f9f5ef;
+    --foreground: #787878;
+
+    --primary: #9e7c4f;
+    --primary-foreground: #ffffff;
+    --secondary: #c19c67;
+    --secondary-foreground: #ffffff;
+
+    --accent: #E4E0DB;
+    --acent-foreground: #5E3C10
+
+    --icon: #c49153;
+    --card: #ffffff;
+    --card-foreground: #787878;
   }
+}
+
+body {
+  background-color: var(--color-background);
 }
