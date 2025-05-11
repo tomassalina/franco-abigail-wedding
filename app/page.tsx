@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WeddingInvitation from "@/app/components/wedding-invitation";
 
 export const metadata: Metadata = {
-  title: "Franco & Abigail - Invitación de Boda",
+  title: "Franco & Abigail - Nuestro gran día",
   description:
     "Te invitamos a nuestra boda. ¡Acompáñanos en este día tan especial!",
 };

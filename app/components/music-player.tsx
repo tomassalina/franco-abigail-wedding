@@ -30,7 +30,7 @@ export default function MusicPlayer({
   return (
     <motion.button
       onClick={toggleMusic}
-      className="bg-[#C19C67] p-3 rounded-full"
+      className="bg-[#C19C67] p-3 rounded-full cursor-pointer"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >

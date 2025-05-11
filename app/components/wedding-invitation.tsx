@@ -62,27 +62,28 @@ export default function WeddingInvitation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 flex items-center justify-center bg-[#F2F2ED] z-50"
+            className="min-h-screen flex items-center justify-center px-5"
           >
-            <div
-              className="w-full max-w-2xl cursor-pointer"
-              onClick={openInvitation}
-            >
-              <div className="relative w-full h-[500px] bg-[#F2F2ED]">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-[#C19C67] flex items-center justify-center"
-                >
-                  <div className="text-white text-center">
-                    <div className="text-2xl font-serif">F&A</div>
-                    <div className="text-sm mt-1">ABRIR</div>
-                  </div>
-                </motion.div>
-                <div className="absolute top-0 left-0 w-full h-0 border-t-[250px] border-l-[400px] border-r-[400px] border-b-0 border-solid border-t-[#F2F2ED] border-l-transparent border-r-transparent"></div>
-                <div className="absolute bottom-0 left-0 w-full h-0 border-b-[250px] border-l-[400px] border-r-[400px] border-t-0 border-solid border-b-[#F2F2ED] border-l-transparent border-r-transparent"></div>
-              </div>
+            <div className="relative w-full flex items-center justify-center">
+              <svg
+                viewBox="0 0 1000 700"
+                className="w-full max-w-5xl"
+                style={{
+                  fill: "#f9f5ef",
+                  boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.5)",
+                  filter: "drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5))",
+                }}
+              >
+                <polygon points="0,0 1000,0 500,380" />
+              </svg>
+
+              <button
+                onClick={openInvitation}
+                className="absolute border-0 outline-0 cursor-pointer bg-secondary tracking-normal leading-none w-16 h-16 md:w-24 md:h-24 rounded-full text-white"
+              >
+                <p className="text-xl md:text-3xl">F&A</p>
+                <span className="text-xs md:text-sm">Abrir</span>
+              </button>
             </div>
           </motion.div>
         ) : (
