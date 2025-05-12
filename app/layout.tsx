@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+export const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
 });
 
-const playfair = Playfair_Display({
+export const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${poppins.className} ${playfair.className} antialiased bg-accent`}
+        className={`${playfair.variable} ${poppins.variable} antialiased bg-accent`}
       >
         {children}
       </body>

@@ -45,18 +45,18 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }, [targetDate]);
 
   const timeUnits = [
-    { value: timeLeft.days, label: "DÍAS" },
-    { value: timeLeft.hours, label: "HS" },
-    { value: timeLeft.minutes, label: "MIN" },
-    { value: timeLeft.seconds, label: "SEG" },
+    { value: timeLeft.days, label: "días" },
+    { value: timeLeft.hours, label: "hs" },
+    { value: timeLeft.minutes, label: "min" },
+    { value: timeLeft.seconds, label: "seg" },
   ];
 
   return (
-    <div className="flex justify-center space-x-4 md:space-x-8">
+    <div className="max-w-lg  mx-auto flex items-center justify-between gap-3">
       {timeUnits.map((unit, index) => (
-        <div key={index} className="text-center">
+        <div key={index} className="flex flex-col items-center">
           <motion.div
-            className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-md flex items-center justify-center shadow-sm"
+            className="w-20 h-20"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{
               scale: unit.label === "SEG" ? [1, 1.05, 1] : 1,
@@ -74,17 +74,18 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             }}
           >
             <motion.span
-              className="text-2xl md:text-3xl font-bold text-[#C19C67]"
+              className="font-playfair text-6xl text-secondary"
               key={unit.value}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
               {unit.value}
+              {unit.label !== "seg" && <span className="text-3xl">:</span>}
             </motion.span>
           </motion.div>
           <motion.p
-            className="text-xs mt-1 text-[#787878]"
+            className="text-xs mt-1 text-secondary uppercase"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}

@@ -9,8 +9,8 @@
   --secondary: #c19c67;
   --secondary-foreground: #ffffff;
 
-  --accent: #E4E0DB;
-  --acent-foreground: #5E3C10
+  --accent: #e4e0db;
+  --accent-foreground: #7c592a; /* #5E3C10 */
 
   --icon: #c49153;
   --card: #ffffff;
@@ -44,8 +44,8 @@
     --secondary: #c19c67;
     --secondary-foreground: #ffffff;
 
-    --accent: #E4E0DB;
-    --acent-foreground: #5E3C10
+    --accent: #e4e0db;
+    --accent-foreground: #7c592a;
 
     --icon: #c49153;
     --card: #ffffff;
@@ -54,5 +54,9 @@
 }
 
 body {
-  background-color: var(--color-background);
+  @apply bg-background text-foreground font-normal font-poppins;
+}
+
+.wrapper {
+  @apply w-full px-4 md:px-8 lg:px-20 xl:px-40 2xl:px-72;
 }
