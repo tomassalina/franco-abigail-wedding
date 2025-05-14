@@ -1,14 +1,32 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { CheckCircle, Copy, X } from "lucide-react";
+import { useState } from "react";
 
 interface GiftModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+const account = {
+  cbu: "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  alias: "BODA.FRANCO.ABIGAIL",
+  holder: "Franco & Abigail",
+};
+
 export default function GiftModal({ isOpen, onClose }: GiftModalProps) {
+  const [isCopying, setIsCopying] = useState(false);
+
+  const handleCopy = () => {
+    setIsCopying(true);
+    navigator.clipboard.writeText(account.cbu).then(() => {
+      setTimeout(() => {
+        setIsCopying(false);
+      }, 2000);
+    });
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -25,7 +43,7 @@ export default function GiftModal({ isOpen, onClose }: GiftModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 20 }}
-            className="bg-white rounded-lg p-6 max-w-md w-full relative"
+            className="bg-white rounded-lg py-12 px-8 max-w-2xl w-full relative"
             onClick={(e) => e.stopPropagation()}
           >
             <motion.button
@@ -37,71 +55,67 @@ export default function GiftModal({ isOpen, onClose }: GiftModalProps) {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <X size={20} />
+              <X size={25} className="text-accent-foreground" />
             </motion.button>
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-center mb-6"
+              className="flex justify-between gap-20"
             >
-              <h3 className="text-xl text-[#5E3C10] font-medium mb-2">
-                Información Bancaria
+              <h3 className="w-2/12 font-playfair text-3xl text-secondary">
+                Cuenta Bancaria
               </h3>
-              <p className="text-[#787878] text-sm">
-                Si deseas hacernos un regalo, puedes realizarlo a través de la
-                siguiente cuenta:
-              </p>
+              <div className="w-10/12 flex flex-col gap-4">
+                <div>
+                  <p>Caja de ahorro en pesos</p>
+                  <p>Titular: {account.holder}</p>
+                  <p>Alias: {account.alias}</p>
+                </div>
+                <div>
+                  <h4>CBU:</h4>
+                  <p>{account.cbu}</p>
+                </div>
+                <button
+                  onClick={handleCopy}
+                  className={`flex items-center gap-1 mt-2 text-sm font-medium cursor-pointer ${
+                    isCopying ? "text-green-500" : "text-icon"
+                  }`}
+                >
+                  {isCopying ? (
+                    <>
+                      <CheckCircle />
+                      Copiado!
+                    </>
+                  ) : (
+                    <>
+                      <Copy />
+                      Copiar CBU
+                    </>
+                  )}
+                </button>
+              </div>
             </motion.div>
+
+            <hr className="mt-10 mb-6" />
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-[#F9F5EF] p-4 rounded-md mb-6"
+              className="flex justify-between gap-20"
             >
-              <div className="mb-3">
-                <p className="text-sm text-[#787878] mb-1">Banco:</p>
-                <p className="text-[#5E3C10] font-medium">
-                  Banco Nación Argentina
+              <h3 className="w-2/12 font-playfair text-3xl text-secondary">
+                Mesa de regalos
+              </h3>
+              <div className="w-10/12">
+                <p>
+                  En caso de que prefieras regalar en efectivo u otro regalo,
+                  vas a tener disponible una mesa para dejar tu regalo y cajita
+                  con sobres en la quinta a tu disposición.
                 </p>
               </div>
-
-              <div className="mb-3">
-                <p className="text-sm text-[#787878] mb-1">Titular:</p>
-                <p className="text-[#5E3C10] font-medium">Franco & Abigail</p>
-              </div>
-
-              <div className="mb-3">
-                <p className="text-sm text-[#787878] mb-1">CBU:</p>
-                <p className="text-[#5E3C10] font-medium">
-                  0000000000000000000000
-                </p>
-              </div>
-
-              <div>
-                <p className="text-sm text-[#787878] mb-1">Alias:</p>
-                <p className="text-[#5E3C10] font-medium">
-                  BODA.FRANCO.ABIGAIL
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-center"
-            >
-              <motion.button
-                onClick={onClose}
-                className="inline-flex items-center justify-center px-6 py-2 bg-[#C19C67] text-white rounded-full text-sm"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Cerrar
-              </motion.button>
             </motion.div>
           </motion.div>
         </motion.div>
