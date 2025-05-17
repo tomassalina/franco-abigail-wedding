@@ -15,7 +15,7 @@ export default function PhotoAlbumSection() {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
 
   return (
-    <div>
+    <div className="px-10">
       <div className="mb-16">
         <div className="text-center mb-8 py-4">
           <h3 className="mb-2 font-playfair font-medium text-4xl text-white">
