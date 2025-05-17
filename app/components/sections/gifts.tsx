@@ -15,7 +15,7 @@ export default function GiftsSection() {
         <p className="mb-8">
           Tu presencia es lo más importante para nosotros.
           <br />
-          Si además deseas hacernos un regalo, puedes ayudarnos con
+          Si además deseas hacernos un regalo, podes ayudarnos con
           <br />
           nuestra luna de miel.
         </p>

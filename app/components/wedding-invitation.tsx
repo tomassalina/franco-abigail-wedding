@@ -21,13 +21,36 @@ export default function WeddingInvitation() {
 
   useEffect(() => {
     if (isOpen && audioRef.current) {
-      audioRef.current.volume = 0.5;
+      const audio = audioRef.current;
+
       if (isPlaying) {
-        audioRef.current
-          .play()
-          .catch((e) => console.log("Audio play failed:", e));
+        audio.volume = 0;
+
+        const delayTimeout = setTimeout(() => {
+          audio
+            .play()
+            .then(() => {
+              let currentVolume = 0.2;
+              const targetVolume = 0.7;
+              const step = 0.01;
+              const interval = 100;
+
+              const fadeIn = setInterval(() => {
+                if (currentVolume < targetVolume) {
+                  currentVolume = Math.min(currentVolume + step, targetVolume);
+                  audio.volume = currentVolume;
+                } else {
+                  clearInterval(fadeIn);
+                }
+              }, interval);
+            })
+            .catch((e) => console.log("Audio play failed:", e));
+        }, 500);
+
+        // Cleanup en caso de que el componente se desmonte antes
+        return () => clearTimeout(delayTimeout);
       } else {
-        audioRef.current.pause();
+        audio.pause();
       }
     }
   }, [isOpen, isPlaying]);

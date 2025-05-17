@@ -10,9 +10,9 @@ interface GiftModalProps {
 }
 
 const account = {
-  cbu: "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  alias: "BODA.FRANCO.ABIGAIL",
-  holder: "Franco & Abigail",
+  cbu: "3840200500000015960892",
+  alias: "FRAN.ABI.2025",
+  holder: "Nicole Abigail Agüero",
 };
 
 export default function GiftModal({ isOpen, onClose }: GiftModalProps) {
