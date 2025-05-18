@@ -30,12 +30,12 @@ export default function MusicPlayer({
   return (
     <motion.button
       onClick={toggleMusic}
-      className="bg-[#C19C67] p-3 rounded-full cursor-pointer shadow-lg"
+      className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-[#C19C67] p-2.5 md:p-3 rounded-full cursor-pointer shadow-lg flex items-center justify-center"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
       {isPlaying ? (
-        <div className="w-6 h-6 flex items-center justify-center space-x-1">
+        <div className="w-5 h-5 md:w-6 md:h-6 flex items-center justify-center space-x-1">
           {[0, 1, 2, 3].map((i) => (
             <motion.div
               key={i}

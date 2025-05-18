@@ -15,13 +15,15 @@ export default function PhotoAlbumSection() {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
 
   return (
-    <div className="px-10">
-      <div className="mb-16">
-        <div className="text-center mb-8 py-4">
-          <h3 className="mb-2 font-playfair font-medium text-4xl text-white">
+    <div className="px-4 md:px-10">
+      <div className="mb-2 md:mb-8 lg:mb-16">
+        <div className="text-center mb-2 md:mb-4 lg:mb-8 py-4">
+          <h3 className="md:mb-2 font-playfair font-medium text-xl md:text-2xl lg:text-4xl text-white">
             Álbum de fotos
           </h3>
-          <h2 className="text-white text-5xl">Momentos únicos</h2>
+          <h2 className="text-white text-2xl md:text-3xl lg:text-5xl">
+            Momentos únicos
+          </h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

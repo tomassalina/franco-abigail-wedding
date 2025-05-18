@@ -13,11 +13,11 @@ export default function HeroSection() {
             className="w-full h-full object-cover rounded-2xl"
           />
         </div>
-        <div className="absolute inset-0 flex flex-col items-center justify-end p-6 bg-gradient-to-t from-black/50 to-transparent text-white">
-          <h2 className="text-5xl font-playfair font-normal mb-1">
+        <div className="absolute inset-0 flex flex-col items-center justify-end p-6 bg-gradient-to-t from-black/50 to-transparent text-white text-center">
+          <h2 className="text-2xl md:text-5xl font-playfair font-normal mb-1">
             ¡Nos casamos!
           </h2>
-          <p className="text-base font-normal">
+          <p className="text-sm md:text-base font-normal">
             y queremos compartirlo con vos
           </p>
         </div>

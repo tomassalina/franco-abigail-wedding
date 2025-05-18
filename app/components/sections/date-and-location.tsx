@@ -4,10 +4,12 @@ import { LocationIcon } from "@/components/icons";
 export default function DateAndLocationSection() {
   return (
     <div className="max-w-2xl mx-auto text-center mb-10">
-      <h3 className="mb-1 font-playfair text-accent-foreground tracking-wider uppercase text-xl">
+      <h3 className="mb-1 font-playfair text-accent-foreground tracking-wider uppercase text-base md:text-xl">
         Agendá la fecha
       </h3>
-      <p className="text-3xl text-card-foreground mb-6">13 de septiembre</p>
+      <p className="text-xl md:text-3xl text-card-foreground mb-6">
+        13 de septiembre
+      </p>
 
       <div className="py-10 px-4 bg-white rounded-3xl">
         <CountdownTimer targetDate="2025-09-13T18:00:00" />
@@ -15,14 +17,14 @@ export default function DateAndLocationSection() {
 
       <div className="text-center my-16">
         <div className="inline-block mb-4">
-          <LocationIcon />
+          <LocationIcon width={50} />
         </div>
         <div className="text-foreground">
-          <h3 className="mb-1 font-playfair text-4xl">Ceremonia</h3>
-          <p className="mb-2 text-2xl font-medium">
+          <h3 className="mb-1 font-playfair text-2xl md:text-4xl">Ceremonia</h3>
+          <p className="mb-2 text-lg md:text-2xl font-medium">
             La Quinta Eventos <br /> Gral.Las Heras, Bs.As.
           </p>
-          <p className="mb-4 text-lg">13 de septiembre, 16hs</p>
+          <p className="mb-4 text-base md:text-lg">13 de septiembre, 16hs</p>
         </div>
         <a
           href="https://maps.app.goo.gl/rfQVJR8o9YBuzuBC6"

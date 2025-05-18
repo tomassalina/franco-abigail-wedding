@@ -52,19 +52,24 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   ];
 
   return (
-    <div className="max-w-lg  mx-auto flex items-center justify-between gap-3">
+    <div className="max-w-lg w-[80%] md:w-full mx-auto flex items-center justify-between gap-3">
       {timeUnits.map((unit, index) => (
-        <div key={index} className="flex flex-col items-center">
+        <div
+          key={index}
+          className={`flex-col items-center ${
+            unit.label === "seg" && "hidden md:flex"
+          }`}
+        >
           <motion.div
-            className="w-20 h-20"
+            className="md:w-20 md:h-20"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{
-              scale: unit.label === "SEG" ? [1, 1.05, 1] : 1,
+              scale: unit.label === "seg" ? [1, 1.05, 1] : 1,
               opacity: 1,
             }}
             transition={{
               scale: {
-                repeat: unit.label === "SEG" ? Number.POSITIVE_INFINITY : 0,
+                repeat: unit.label === "seg" ? Number.POSITIVE_INFINITY : 0,
                 duration: 1,
               },
               opacity: {
@@ -74,7 +79,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             }}
           >
             <motion.span
-              className="font-playfair text-6xl text-secondary"
+              className="font-playfair text-5xl md:text-6xl text-secondary"
               key={unit.value}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,7 +90,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             </motion.span>
           </motion.div>
           <motion.p
-            className="text-xs mt-1 text-secondary uppercase"
+            className="text-xs mt-1 text-secondary uppercase mr-1"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}

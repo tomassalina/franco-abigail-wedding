@@ -3,7 +3,7 @@ import { CheckIcon, LetterIcon } from "@/components/icons";
 export default function ConfirmationSection() {
   return (
     <div className="text-center mb-16 relative z-10">
-      <div className="inline-block mb-4">
+      <div className="inline-block mb-4 relative left-3.5">
         <LetterIcon />
       </div>
       <h3 className="mb-2 font-playfair text-3xl font-medium">
