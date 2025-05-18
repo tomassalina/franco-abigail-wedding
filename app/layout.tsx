@@ -18,6 +18,21 @@ export const metadata: Metadata = {
   title: "Franco & Abigail - Boda",
   description:
     "Te invitamos a nuestra boda. ¡Acompáñanos en este día tan especial!",
+  openGraph: {
+    title: "Franco & Abigail - Boda",
+    description:
+      "Te invitamos a nuestra boda. ¡Acompáñanos en este día tan especial!",
+    url: "https://boda-fran-abi.vercel.app",
+    siteName: "Franco & Abigail - Boda",
+    images: [
+      {
+        url: "/images/hero.image.png",
+        width: 1200,
+        height: 630,
+        alt: "Franco & Abigail - Boda",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
