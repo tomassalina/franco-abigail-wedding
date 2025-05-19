@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Franco & Abigail - Boda",
     images: [
       {
-        url: "/images/hero.image.png",
+        url: "/images/hero.image.jpg",
         width: 1200,
         height: 630,
         alt: "Franco & Abigail - Boda",
