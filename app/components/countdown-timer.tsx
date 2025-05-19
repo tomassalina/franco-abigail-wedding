@@ -52,14 +52,9 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   ];
 
   return (
-    <div className="max-w-lg w-[80%] md:w-full mx-auto flex items-center justify-between gap-3">
+    <div className="max-w-lg w-[80%] md:w-full mx-auto flex items-center justify-between gap-4">
       {timeUnits.map((unit, index) => (
-        <div
-          key={index}
-          className={`flex-col items-center ${
-            unit.label === "seg" && "hidden md:flex"
-          }`}
-        >
+        <div key={index} className="flex-col items-center">
           <motion.div
             className="md:w-20 md:h-20"
             initial={{ scale: 0.9, opacity: 0 }}
@@ -79,7 +74,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             }}
           >
             <motion.span
-              className="font-playfair text-5xl md:text-6xl text-secondary"
+              className="font-playfair text-3xl md:text-6xl text-secondary"
               key={unit.value}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}

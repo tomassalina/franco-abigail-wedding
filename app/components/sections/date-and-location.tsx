@@ -11,7 +11,7 @@ export default function DateAndLocationSection() {
         13 de septiembre
       </p>
 
-      <div className="py-10 px-4 bg-white rounded-3xl">
+      <div className="py-10 px-2 md:px-4 bg-white rounded-3xl">
         <CountdownTimer targetDate="2025-09-13T18:00:00" />
       </div>
 
