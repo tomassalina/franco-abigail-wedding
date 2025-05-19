@@ -6,7 +6,7 @@ export default function HeroSection() {
       <div className="relative">
         <div className="w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden">
           <Image
-            src="/images/hero.image.png"
+            src="/images/hero.image.jpg"
             alt="Franco y Abigail"
             width={800}
             height={400}
