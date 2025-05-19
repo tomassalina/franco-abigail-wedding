@@ -36,7 +36,7 @@ export default function PlaylistsSection() {
           faltar en nuestra boda
         </p>
         <a
-          href="https://youtube.com/playlist?list=PLE3v_7V4d8NLGqd8iVj7ZFeJDaJBl15-T&si=3lolVLx5rmV7u3Bm"
+          href="https://www.youtube.com/playlist?list=PLE3v_7V4d8NLGqd8iVj7ZFeJDaJBl15-T&jct=NQd1NtbZ1NGeXUTElpvQNg"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center px-10 py-2 bg-[#EFEEEE] uppercase rounded-2xl"
