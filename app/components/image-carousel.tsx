@@ -8,7 +8,7 @@ import Image from "next/image";
 interface ImageCarouselProps {
   isOpen: boolean;
   onClose: () => void;
-  images: string[];
+  images: { src: string; className: string }[];
   initialIndex: number;
 }
 
@@ -140,7 +140,7 @@ export default function ImageCarousel({
               >
                 <div className="relative w-full h-full max-h-[80vh]">
                   <Image
-                    src={images[currentIndex] || "/placeholder.svg"}
+                    src={images[currentIndex].src || "/placeholder.svg"}
                     alt={`Foto ${currentIndex + 1}`}
                     className="w-full h-full object-contain rounded-lg"
                     fill
